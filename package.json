@@ -1,0 +1,55 @@
+{
+  "name": "react-modal-tailwind",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Modal components using Redux for state management and tailwind support for styling",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc && npm run build:css",
+    "build:css": "postcss globals.css -o dist/globals.css",
+    "watch:css": "tailwindcss -i globals.css -o ./dist/globals.css --watch",
+    "lint": "eslint --config eslint.config.ts .",
+    "format": "prettier --write .",
+    "type-check": "tsc --noEmit",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "modal",
+    "redux",
+    "react",
+    "dialog",
+    "state management"
+  ],
+  "author": "Kristof Zorko",
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "@typescript-eslint/eslint-plugin": "^8.19.1",
+    "@typescript-eslint/parser": "^8.19.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-define-config": "^2.1.0",
+    "eslint-plugin-react": "^7.37.3",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "jiti": "^2.4.2",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "prettier": "^3.4.2",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "dependencies": {
+    "@floating-ui/react": "^0.27.2",
+    "@reduxjs/toolkit": "^2.5.0"
+  }
+}
