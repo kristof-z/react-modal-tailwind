@@ -1,18 +1,17 @@
-import { useReduxDispatch, useReduxSelector } from "./useRedux";
-import { close, open, resize } from "../store/slices";
-import { ModalInterface } from "./types";
-import React from "react";
+import { useReduxDispatch, useReduxSelector } from './useRedux';
+import { close, open, resize } from '../store/slices';
+import React from 'react';
 
-export function useReduxModal(): ModalInterface {
+export function useReduxModal() {
   const dispatch = useReduxDispatch();
-  const isFullScreen = useReduxSelector((state) => state.modal.isFullScreen);
+  const { open: isOpen, component, isFullScreen } = useReduxSelector((state) => state.modal);
 
   const closeModal = React.useCallback(() => {
     dispatch(close());
   }, [dispatch]);
 
-  const openModal = React.useCallback(() => {
-    dispatch(open());
+  const openModal = React.useCallback((component: React.ReactNode) => {
+    dispatch(open(component));
   }, [dispatch]);
 
   const resizeModal = React.useCallback(
@@ -22,11 +21,12 @@ export function useReduxModal(): ModalInterface {
     [dispatch, isFullScreen]
   );
 
-  return React.useMemo(() => ({
-    close: closeModal,
-    open: openModal,
-    resize: resizeModal,
-    isFullScreen
-  }), [closeModal, resizeModal, isFullScreen]);
-  
+  return {
+    openModal,
+    closeModal,
+    resizeModal,
+    isOpen,
+    isFullScreen,
+    component,
+  };
 }

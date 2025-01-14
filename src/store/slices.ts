@@ -4,6 +4,7 @@ import { ReduxInitialStateProps } from './types';
 export const initialState: ReduxInitialStateProps = {
   open: false,
   component: null,
+  isFullScreen: false,
 };
 
 const slice = createSlice({
@@ -21,6 +22,8 @@ const slice = createSlice({
     resize(state, action: PayloadAction<{ isFullScreen?: boolean }>) {
       if (action.payload.isFullScreen !== undefined) {
         state.isFullScreen = action.payload.isFullScreen;
+      } else {
+        state.isFullScreen = !state.isFullScreen;
       }
     },
   },

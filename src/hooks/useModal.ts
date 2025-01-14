@@ -1,4 +1,4 @@
-import * as React from 'react';
+/* import * as React from 'react';
 import { useFloating, useClick, useRole, useInteractions } from '@floating-ui/react';
 import { ModalOptions } from '../components/types';
 import { useReduxDispatch, useReduxSelector } from './useRedux';
@@ -49,3 +49,6 @@ export function useModal({
     isResizable,
   };
 }
+ */
+
+export default {}
