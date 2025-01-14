@@ -1,9 +1,3 @@
-import { useModal } from "../hooks/useModal";
-
-export type ContextType =
-  | (ReturnType<typeof useModal> & { children?: React.ReactNode })
-  | null | any;
-
 
 export interface ModalProps extends ModalOptions {
   open: boolean;

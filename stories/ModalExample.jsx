@@ -1,7 +1,7 @@
 import React from 'react';
 import { useModal, Modal } from '../src/index';
 export const ModalExample = ({ primary, backgroundColor, size, label, ...props }) => {
-  const { close, toggle } = useModal()
+  const { closeModal, toggleFullScreen } = useModal()
   return (
     <Modal fullscreen {...props}>
       <Modal.Trigger className="bg-blue-500 text-white p-3 rounded-sm">
@@ -16,8 +16,8 @@ export const ModalExample = ({ primary, backgroundColor, size, label, ...props }
         </Modal.Body>
         <Modal.Footer>
           <div className='w-full justify-center flex gap-3'>
-            <button onClick={close} className="bg-blue-500 flex-1 max-w-[250px] text-white px-3 py-2 rounded-sm">Close</button>
-            <button onClick={toggle} className="bg-blue-500 flex-1 max-w-[250px] text-white px-3 py-2 rounded-sm">Resize</button>
+            <button onClick={closeModal} className="bg-blue-500 flex-1 max-w-[250px] text-white px-3 py-2 rounded-sm">Close</button>
+            <button onClick={toggleFullScreen} className="bg-blue-500 flex-1 max-w-[250px] text-white px-3 py-2 rounded-sm">Resize</button>
           </div>
         </Modal.Footer>
       </Modal.Content>

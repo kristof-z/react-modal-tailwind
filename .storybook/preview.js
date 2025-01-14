@@ -8,7 +8,7 @@ export const decorators = [
   (Story) => (
     <Provider store={store}>
       <Story />
-      <ModalProvider />
+
     </Provider>
   ),
 ];

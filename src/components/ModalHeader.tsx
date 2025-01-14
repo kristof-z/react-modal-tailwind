@@ -2,9 +2,8 @@ import React from 'react';
 import { CloseIcon } from './icons/CloseIcon';
 import { MaximizeIcon } from './icons/MaximizeIcon';
 import { MinimizeIcon } from './icons/MinimizeIcon';
-export { default as useModalContext } from '../hooks/useModalContext';
-import useModalContext from '../hooks/useModalContext';
 import { ModalHeaderProps } from './types';
+import { useReduxModal } from '../hooks/useReduxModal';
 
 export function ModalHeader({
   children,
@@ -12,11 +11,11 @@ export function ModalHeader({
   className = 'modal__header',
   ...props
 }: ModalHeaderProps) {
-  const { isClosable, isResizable, setOpen, open, isFullScreen, toggleScreen } = useModalContext();
+  const { closeModal, toggleFullScreen, isClosable, isResizable, isFullScreen } = useReduxModal();
 
   const handleClose = () => {
-    if (isClosable && setOpen) {
-      setOpen(false);
+    if (isClosable) {
+      closeModal();
     }
   };
 
@@ -29,7 +28,7 @@ export function ModalHeader({
       <div className="modal-controls">
         {isResizable && (
           <button
-            onClick={toggleScreen}
+            onClick={toggleFullScreen}
             className="modal__controls"
             title={isFullScreen ? 'Minimize' : 'Maximize'}
           >

@@ -5,25 +5,31 @@ import {
   useMergeRefs,
 } from '@floating-ui/react';
 import '../../globals.css';
-import useModalContext from '../hooks/useModalContext';
+import { useReduxModal } from '../hooks/useReduxModal';
 
 export function ModalContent({ propRef, ...props }: any) {
-  const { context: floatingContext, ...context } = useModalContext();
-  const ref = useMergeRefs([context.refs.setFloating, propRef]);
-  if (!context.open) return null;
+  const {
+    isOpen,
+    component,
+    isFullScreen,
+    context: floatingContext,
+  } = useReduxModal();
+  
+  const ref = useMergeRefs([propRef]);
+
+  if (!isOpen) return null;
+
   return (
     <FloatingPortal>
       <FloatingFocusManager context={floatingContext}>
-      <div className="modal__backdrop">
-        <div
-          ref={ref}
-          {...context.getFloatingProps(props)}
-          className={`${context.isFullScreen ? 'modal__fullscreen' : 'modal__container'}`}
-        >
-        
-          {props.children}
+        <div className="modal__backdrop">
+          <div
+            ref={ref}
+            className={`${isFullScreen ? 'modal__fullscreen' : 'modal__container'}`}
+          >
+            {component || props.children}
+          </div>
         </div>
-      </div>
       </FloatingFocusManager>
     </FloatingPortal>
   );

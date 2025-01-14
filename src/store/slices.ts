@@ -5,6 +5,8 @@ export const initialState: ReduxInitialStateProps = {
   open: false,
   component: null,
   isFullScreen: false,
+  isResizable: true,
+  isClosable: true
 };
 
 const slice = createSlice({
@@ -26,8 +28,19 @@ const slice = createSlice({
         state.isFullScreen = !state.isFullScreen;
       }
     },
+    setOptions(
+      state,
+      action: PayloadAction<{ isResizable?: boolean; isClosable?: boolean }>
+    ) {
+      if (action.payload.isResizable !== undefined) {
+        state.isResizable = action.payload.isResizable;
+      }
+      if (action.payload.isClosable !== undefined) {
+        state.isClosable = action.payload.isClosable;
+      }
+    },
   },
 });
 
-export const { open, close, resize } = slice.actions;
+export const { open, close, resize, setOptions } = slice.actions;
 export default slice.reducer;
