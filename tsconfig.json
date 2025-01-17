@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "lib": ["DOM", "ES2022"],
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "jsx": "react",
+    "outDir": "dist",
+    "declaration": true,
+    "declarationDir": "./dist/types", // Keep declarations separate
+    "emitDeclarationOnly": false,    // Emit JavaScript alongside declarations
+    "baseUrl": ".",
+    "paths": {
+      "*": ["src/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "storybook-static", "src/**/*.stories.tsx", "src/**/*.css"]
+}
+
+
+
+/* {
+  "compilerOptions": {
+    "target": "ES2022",                   
+    "module": "ESNext",                   
+    "lib": ["DOM", "ES2022"],             
+    "moduleResolution": "Node",          
+    "esModuleInterop": true,            
+    "forceConsistentCasingInFileNames": true, 
+    "strict": true,                     
+    "skipLibCheck": true,                
+    "jsx": "react",                      
+    "outDir": "dist",                     
+    "declaration": true,
+    "declarationDir": "./dist/",
+    "emitDeclarationOnly": true,       
+    "baseUrl": ".",                      
+    "paths": {
+      "*": ["src/*"]
+    }
+  },*/
+  //"include": ["src/**/", "rollup.config.mjs"],              
+  //"exclude": ["node_modules", "dist", "storybook-static", "src/**/*.stories.tsx", "src/**/*.css"]
+//}
+ 

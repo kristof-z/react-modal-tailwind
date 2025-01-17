@@ -1,9 +1,9 @@
 import React from 'react';
 import { useModal, Modal } from '../src/index';
-export const ModalExample = ({ primary, backgroundColor, size, label, ...props }) => {
+export const ModalExample = () => {
   const { closeModal, toggleFullScreen } = useModal()
   return (
-    <Modal fullscreen {...props}>
+    <Modal fullscreen>
       <Modal.Trigger className="bg-blue-500 text-white p-3 rounded-sm">
         Modal Trigger
       </Modal.Trigger>

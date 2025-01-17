@@ -13,11 +13,11 @@ export function ModalHeader({
 }: ModalHeaderProps) {
   const { closeModal, toggleFullScreen, isClosable, isResizable, isFullScreen } = useReduxModal();
 
-  const handleClose = () => {
+  const handleClose = React.useCallback(() => {
     if (isClosable) {
       closeModal();
     }
-  };
+  }, [isClosable]);
 
   if (!open) return null;
 

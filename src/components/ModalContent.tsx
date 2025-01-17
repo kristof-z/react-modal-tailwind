@@ -4,7 +4,6 @@ import {
   FloatingPortal,
   useMergeRefs,
 } from '@floating-ui/react';
-import '../../globals.css';
 import { useReduxModal } from '../hooks/useReduxModal';
 
 export function ModalContent({ propRef, ...props }: any) {

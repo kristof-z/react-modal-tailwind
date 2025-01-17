@@ -20,29 +20,9 @@ npm install tailwind-redux-modal
 
 ## Usage
 
-Place the **<ModalProvider />** at the root of your component tree, typically in the App component. This ensures that the modal state is accessible throughout your application.
-
 ```javascript
 import React from 'react';
-import { ModalProvider } from 'tailwind-redux-modal'
-
-const App = () => {
-  return (
-    <Container>
-      <ModalProvider />
-      <Components />
-    </Container>
-  );
-};
-
-export default App;
-```
-
-After setting up the ModalProvider, you can use modals in your app like this
-
-```javascript
-import React from 'react';
-import { Modal } from 'tailwind-redux-modal'
+import { Modal } from 'react-modal-tailwind'
 
 const ModalExample = () => {
   const { close } = useModal();
@@ -68,7 +48,7 @@ export default ModalExample;
 
 ```javascript
 import React from 'react';
-import { Modal } from 'tailwind-redux-modal'
+import { Modal } from 'react-modal-tailwind'
 
 export const ModalExample = () => {
   const { close, resize } = useModal()

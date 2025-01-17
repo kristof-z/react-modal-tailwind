@@ -1,12 +1,13 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { Provider } from 'react-redux';
 import { useReduxModal } from '../hooks/useReduxModal';
 import { ModalProps } from './types';
 import { ModalContent } from './ModalContent';
 import { ModalTrigger } from './ModalTrigger';
-import '../../globals.css';
 import { ModalHeader } from './ModalHeader';
 import { ModalBody } from './ModalBody';
 import { ModalFooter } from './ModalFooter';
+import store from 'store';
 
 export function Modal({
   initialOpen = false,
@@ -18,11 +19,16 @@ export function Modal({
   const { openModal, closeModal, updateOptions, toggleFullScreen } = useReduxModal();
 
   useEffect(() => {
-    // Update options in Redux state
     updateOptions({ isResizable, isClosable });
   }, [initialOpen, fullscreen, isResizable, isClosable, openModal, closeModal, updateOptions, toggleFullScreen, children]);
 
-  return children;
+  return (
+    <Provider store={store}>
+      {children}
+    </Provider>
+  )
+  
+  ;
 }
 
 Modal.Content = ModalContent;

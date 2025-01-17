@@ -1,7 +1,5 @@
 
 export interface ModalProps extends ModalOptions {
-  open: boolean;
-  onOpenChange: (nextOpen: boolean) => void;
   children: React.ReactNode;
 }
 
