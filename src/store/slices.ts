@@ -43,4 +43,4 @@ const slice = createSlice({
 });
 
 export const { open, close, resize, setOptions } = slice.actions;
-export default slice.reducer;
+export const modalReducer = slice.reducer;
