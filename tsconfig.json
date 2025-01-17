@@ -11,40 +11,24 @@
     "jsx": "react",
     "outDir": "dist",
     "declaration": true,
-    "declarationDir": "./dist", 
-    "emitDeclarationOnly": false, 
+    "declarationDir": "./dist/types", 
+    "emitDeclarationOnly": false,    
     "baseUrl": ".",
     "paths": {
-      "*": ["src/*"]
-    }
+      "@/*": ["src/*"]               
+    },
+    "allowSyntheticDefaultImports": true,  
+    "isolatedModules": true,              
+    "resolveJsonModule": true,            
+    "noEmitOnError": true                 
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "storybook-static", "src/**/*.stories.tsx", "src/**/*.css"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    "storybook-static",
+    "src/**/*.stories.tsx",
+    "src/**/*.test.tsx",
+    "src/**/*.css"
+  ]
 }
-
-
-
-/* {
-  "compilerOptions": {
-    "target": "ES2022",                   
-    "module": "ESNext",                   
-    "lib": ["DOM", "ES2022"],             
-    "moduleResolution": "Node",          
-    "esModuleInterop": true,            
-    "forceConsistentCasingInFileNames": true, 
-    "strict": true,                     
-    "skipLibCheck": true,                
-    "jsx": "react",                      
-    "outDir": "dist",                     
-    "declaration": true,
-    "declarationDir": "./dist/",
-    "emitDeclarationOnly": true,       
-    "baseUrl": ".",                      
-    "paths": {
-      "*": ["src/*"]
-    }
-  },*/
-  //"include": ["src/**/", "rollup.config.mjs"],              
-  //"exclude": ["node_modules", "dist", "storybook-static", "src/**/*.stories.tsx", "src/**/*.css"]
-//}
- 
