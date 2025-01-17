@@ -1,6 +1,6 @@
 {
   "name": "react-modal-tailwind",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "type": "module",
   "description": "Modal component using Redux for state management and tailwind support for styling",
   "main": "dist/index.cjs.js",
