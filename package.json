@@ -1,6 +1,6 @@
 {
   "name": "react-modal-tailwind",
-  "version": "1.1.0",
+  "version": "1.2.1",
   "type": "module",
   "description": "Modal component using Redux for state management and tailwind support for styling",
   "main": "dist/index.cjs.js",
@@ -8,14 +8,16 @@
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",  
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.esm.js",
       "require": "./dist/index.cjs.js",
-      "default": "./dist/index.esm.js"  
+      "default": "./dist/index.esm.js"
     },
-    "./styles.css": "./dist/globals.css" 
+    "./styles.css": "./dist/globals.css"
   },
-  "sideEffects": ["**/*.css"],
+  "sideEffects": [
+    "**/*.css"
+  ],
   "files": [
     "dist",
     "README.md"
@@ -73,6 +75,7 @@
     "rollup": "^4.30.1",
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
     "tailwindcss": "^3.4.17",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3",
@@ -80,7 +83,8 @@
   },
   "peerDependencies": {
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-redux": "^8.0.0"
   },
   "dependencies": {
     "@floating-ui/react": "^0.27.2",
