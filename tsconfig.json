@@ -11,8 +11,8 @@
     "jsx": "react",
     "outDir": "dist",
     "declaration": true,
-    "declarationDir": "./dist/types", // Keep declarations separate
-    "emitDeclarationOnly": false,    // Emit JavaScript alongside declarations
+    "declarationDir": "./dist", 
+    "emitDeclarationOnly": false, 
     "baseUrl": ".",
     "paths": {
       "*": ["src/*"]
